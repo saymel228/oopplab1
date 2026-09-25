@@ -104,5 +104,22 @@ int main() {
     myArr.data = nullptr;
     myArr.size = 0;
 
+        // ===================== ЗАДАНИЕ 4 =====================
+    std::cout << "\n=== Задание 4: Матрица оценок студентов ===\n";
+    int students = 3, subjects = 4;
+    int** grades = allocateMatrix(students, subjects);
+    fillMatrix(grades, students, subjects);
+    
+    std::cout << "\nМатрица с рамкой:\n";
+    printMatrix(grades, students, subjects);
+    
+    std::cout << "\nМатрица без рамки:\n";
+    printMatrix(grades, students, subjects, false, "Оценки без рамки");
+    
+    std::cout << "\nИтоговая ведомость:\n";
+    printMatrix(grades, students, subjects, true, "Итоговая ведомость");
+    
+    freeMatrix(grades, students);
+
     return 0;
 }
