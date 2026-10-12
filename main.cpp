@@ -4,10 +4,11 @@
 #include <iomanip>
 #include "safe_array.h"
 #include "matrix_utils.h"
+#include "windows.h"
 
 // --- ЗАДАНИЕ 1 ---
 void fillArray(int (&arr)[10]) {
-    for (auto &x : arr) x = std::rand() % 100;
+    for (auto &x : arr) x = std::rand() % 100;  
 }
 void printArray(const int (&arr)[10]) {
     for (const auto &x : arr) std::cout << x << " ";
@@ -22,7 +23,9 @@ void multiplyByTwo(int (&arr)[10]) {
 }
 
 int main() {
-    setlocale(LC_ALL, "Russian"); 
+  //  setlocale(LC_ALL, "Russian"); 
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
     std::srand(static_cast<unsigned>(std::time(nullptr)));
 
     // === Выполнение Задания 1 ===
